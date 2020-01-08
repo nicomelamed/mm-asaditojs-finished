@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Title from "./components/Title";
-import Card from "./components/Card";
+import Title from "./components/Title/Title";
+import Card from "./components/Card/Card";
 
 import "./App.css";
 
 const App = () => {
   const [gifUrl, setGifUrl] = useState("");
 
-  const getRandomGif = () => {
+  const getRandomGifUrl = () => {
     const url =
       "https://api.giphy.com/v1/gifs/random?api_key=gH7glaXpjdIJUfGdtE2GO5FSQzi09bbY&tag=Cat&rating=G";
 
@@ -19,7 +19,7 @@ const App = () => {
   };
 
   const handleToggleGif = () => {
-    getRandomGif();
+    getRandomGifUrl();
   };
 
   return (

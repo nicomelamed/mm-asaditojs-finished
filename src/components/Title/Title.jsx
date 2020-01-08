@@ -1,8 +1,10 @@
 import React from "react";
 
+import "./title.css";
+
 const Title = () => (
   <>
-    <h1 className="title">Random Cat Generator</h1>
+    <h1 className="title">pick your favorite cat</h1>
   </>
 );
 

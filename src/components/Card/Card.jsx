@@ -1,5 +1,7 @@
 import React from "react";
-import GifButton from "./GifButton";
+import Button from "../Button/Button";
+
+import "./card.css";
 
 const Card = ({ gifUrl, handleToggleGif }) => (
   <div className="card">
@@ -12,7 +14,11 @@ const Card = ({ gifUrl, handleToggleGif }) => (
         </span>
       </p>
     )}
-    <GifButton handleToggleGif={handleToggleGif} />
+
+    <div className="button-wrapper">
+      <Button type="random" handleToggleGif={handleToggleGif} />
+      <Button type="favorite" handleToggleGif={handleToggleGif} />
+    </div>
   </div>
 );
 
