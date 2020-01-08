@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { GifProvider } from './context/GifContext';
+import HomePage from './components/HomePage';
 
-function App() {
+const App = () => {
+  // state
+  const [gif, setGif] = useState({
+    url: '',
+    isVisible: false,
+  });
+
+  // methods
+  const getRandomGif = async () => {
+    const res = await axios.get(
+      `https://api.giphy.com/v1/gifs/random?api_key=gH7glaXpjdIJUfGdtE2GO5FSQzi09bbY&tag=Cat&rating=G`
+    );
+    const url = await res.data.data.fixed_height_downsampled_url;
+    return url;
+  };
+
+  const handleToggleGif = async choice => {
+    let url;
+    switch (choice) {
+      case 'open':
+        url = await getRandomGif();
+        setGif({
+          ...gif,
+          url,
+          isVisible: true,
+        });
+        break;
+      case 'close':
+        setGif({
+          ...gif,
+          isVisible: false,
+        });
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GifProvider value={{ ...gif, handleToggleGif }}>
+      <HomePage />
+    </GifProvider>
   );
-}
+};
 
 export default App;
