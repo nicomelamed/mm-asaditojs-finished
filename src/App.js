@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Title from "./components/Title/Title";
 import Card from "./components/Card/Card";
+import Button from "./components/Button/Button";
 import List from "./components/List/List";
 
 import "./App.css";
@@ -32,13 +33,14 @@ const App = () => {
   };
 
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       <Title />
-      <Card
-        gifUrl={gifUrl}
-        handleToggleGif={handleToggleGif}
-        addFavoriteGif={addFavoriteGif}
-      />
+
+      <Card gifUrl={gifUrl}>
+        <Button type="random" handleToggleGif={handleToggleGif} />
+        <Button type="favorite" addFavoriteGif={addFavoriteGif} />
+      </Card>
+
       <List favorites={favorites} />
     </div>
   );
