@@ -4,7 +4,7 @@ import "./title.css";
 
 const Title = () => (
   <>
-    <h1 className="title">pick your favorite cat</h1>
+    <h1 className='title'>pick your favorite gif cat</h1>
   </>
 );
 

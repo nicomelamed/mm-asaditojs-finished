@@ -1,6 +1,7 @@
 .card {
   width: 30rem;
   padding: 3rem;
+  margin-bottom: 1rem;
   border-radius: 10px;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
   display: flex;
