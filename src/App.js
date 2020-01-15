@@ -20,25 +20,21 @@ const App = () => {
       });
   };
 
-  const handleToggleGif = () => {
-    getRandomGifUrl();
-  };
-
   const addFavoriteGif = () => {
     if (!gifUrl) return;
 
     if (!favorites.includes(gifUrl)) {
-      setFavorites(favorites.concat(gifUrl));
+      setFavorites([...favorites, gifUrl]);
     }
   };
 
   return (
     <div className="main-wrapper">
-      <Title />
+      <Title text="pick your favorite gif cat" />
 
       <Card gifUrl={gifUrl}>
-        <Button type="random" handleToggleGif={handleToggleGif} />
-        <Button type="favorite" addFavoriteGif={addFavoriteGif} />
+        <Button category="random" handleToggleGif={getRandomGifUrl} />
+        <Button category="favorite" addFavoriteGif={addFavoriteGif} />
       </Card>
 
       <List favorites={favorites} />
