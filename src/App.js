@@ -33,7 +33,7 @@ const App = () => {
   };
 
   return (
-    <div className="wrapper">
+    <div className="main-wrapper">
       <Title />
 
       <Card gifUrl={gifUrl}>
