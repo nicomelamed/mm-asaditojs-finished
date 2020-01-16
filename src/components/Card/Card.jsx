@@ -1,8 +1,9 @@
 import React from "react";
+import Button from "../Button/Button";
 
 import "./card.css";
 
-const Card = ({ gifUrl, children }) => {
+const Card = ({ gifUrl, getRandomGifUrl, addFavoriteGif }) => {
   return (
     <div className="card">
       {gifUrl === "" ? (
@@ -12,10 +13,13 @@ const Card = ({ gifUrl, children }) => {
           </span>
         </p>
       ) : (
-        <img className="mb" src={gifUrl} alt="Cat" />
+        <img className="margin-bottom" src={gifUrl} alt="Cat" />
       )}
 
-      <div className="button-wrapper">{children}</div>
+      <div className="button-wrapper">
+        <Button category="random" getRandomGifUrl={getRandomGifUrl} />
+        <Button category="favorite" addFavoriteGif={addFavoriteGif} />
+      </div>
     </div>
   );
 };

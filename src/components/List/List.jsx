@@ -14,7 +14,7 @@ const List = ({ favorites }) => {
             return (
               <div className="list-item" key={url}>
                 <a href={url} target="_blank" rel="noopener noreferrer">
-                  <img className="mb" src={url} alt="Favorite Cat" />
+                  <img className="margin-bottom" src={url} alt="Favorite Cat" />
                 </a>
               </div>
             );
