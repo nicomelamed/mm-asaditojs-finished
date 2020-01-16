@@ -1,7 +1,5 @@
 import React from "react";
-import Button from "../Button/Button";
-
-import "./card.css";
+import Button from "./Button";
 
 const Card = ({ gifUrl, getRandomGifUrl, addFavoriteGif }) => {
   return (

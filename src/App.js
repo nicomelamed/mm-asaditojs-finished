@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Title from "./components/Title/Title";
-import Card from "./components/Card/Card";
-import List from "./components/List/List";
+import Title from "./components/Title";
+import Card from "./components/Card";
+import List from "./components/List";
 
 import "./App.css";
 

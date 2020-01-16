@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./button.css";
-
 const Button = ({ category, getRandomGifUrl, addFavoriteGif }) => {
   return (
     <button
