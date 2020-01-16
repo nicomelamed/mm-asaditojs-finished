@@ -2,15 +2,17 @@ import React from "react";
 
 import "./button.css";
 
-const Button = ({ type, handleToggleGif, addFavoriteGif }) => {
+const Button = ({ category, handleToggleGif, addFavoriteGif }) => {
   return (
     <button
       type="button"
-      className={`button button--${type}`}
-      onClick={() => (type === "random" ? handleToggleGif() : addFavoriteGif())}
+      className={`button button--${category}`}
+      onClick={() =>
+        category === "random" ? handleToggleGif() : addFavoriteGif()
+      }
     >
-      <span role="img" aria-label={type}>
-        {type === "random" ? "🎲" : "⭐️"}
+      <span role="img" aria-label={category}>
+        {category === "random" ? "🎲" : "⭐️"}
       </span>
     </button>
   );
