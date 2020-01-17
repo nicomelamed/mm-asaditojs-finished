@@ -3,8 +3,6 @@ import Title from "./components/Title";
 import Card from "./components/Card";
 import List from "./components/List";
 
-import "./App.css";
-
 const App = () => {
   const [gifUrl, setGifUrl] = useState("");
   const [favorites, setFavorites] = useState([]);
