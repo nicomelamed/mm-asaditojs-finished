@@ -1,13 +1,11 @@
 import React from "react";
 
-const Button = ({ category, getRandomGifUrl, addFavoriteGif }) => {
+const Button = ({ category, onClick }) => {
   return (
     <button
       type="button"
       className={`button button--${category}`}
-      onClick={() =>
-        category === "random" ? getRandomGifUrl() : addFavoriteGif()
-      }
+      onClick={onClick}
     >
       <span role="img" aria-label={category}>
         {category === "random" ? "🎲" : "⭐️"}

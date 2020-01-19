@@ -15,8 +15,8 @@ const Card = ({ gifUrl, getRandomGifUrl, addFavoriteGif }) => {
       )}
 
       <div className="button-wrapper">
-        <Button category="random" getRandomGifUrl={getRandomGifUrl} />
-        <Button category="favorite" addFavoriteGif={addFavoriteGif} />
+        <Button category="random" onClick={getRandomGifUrl} />
+        <Button category="favorite" onClick={addFavoriteGif} />
       </div>
     </div>
   );
