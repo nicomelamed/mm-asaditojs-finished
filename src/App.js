@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Title from "./components/Title";
 import Card from "./components/Card";
 import List from "./components/List";
@@ -7,7 +7,16 @@ const App = () => {
   const [gifUrl, setGifUrl] = useState("");
   const [favorites, setFavorites] = useState([]);
 
-  const getRandomGifUrl = () => {
+  const getRandomGifUrl = async () => {
+    const data = await fetch(
+      "https://api.giphy.com/v1/gifs/random?api_key=gH7glaXpjdIJUfGdtE2GO5FSQzi09bbY&tag=Cat&rating=G"
+    );
+    const response = await data.json();
+    setGifUrl(setGifUrl(response.data.fixed_height_downsampled_url));
+
+    /* 
+    Fetch API using Promises
+    
     fetch(
       "https://api.giphy.com/v1/gifs/random?api_key=gH7glaXpjdIJUfGdtE2GO5FSQzi09bbY&tag=Cat&rating=G"
     )
@@ -15,19 +24,24 @@ const App = () => {
       .then(response => {
         setGifUrl(response.data.fixed_height_downsampled_url);
       });
+    */
   };
 
-  const addFavoriteGif = () => {
+  const addFavoriteGif = useCallback(() => {
     if (!gifUrl) return;
+
+    // @todo - Print an alert message :)
 
     if (!favorites.includes(gifUrl)) {
       setFavorites([...favorites, gifUrl]);
     }
-  };
+  }, [favorites, gifUrl]);
 
   return (
     <div className="main-wrapper">
-      <Title text="pick your favorite gif cat" />
+      <Title>
+        pick your <u>favorite</u> gif cat
+      </Title>
 
       <Card
         gifUrl={gifUrl}

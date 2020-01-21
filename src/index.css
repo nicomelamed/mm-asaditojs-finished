@@ -65,11 +65,11 @@ body {
   animation: float 0.8s ease-in-out infinite;
 }
 
-.button--random {
+.button--🎲 {
   background-color: rgb(255, 172, 172);
 }
 
-.button--favorite {
+.button--⭐️ {
   background-color: rgb(152, 219, 255);
 }
 
