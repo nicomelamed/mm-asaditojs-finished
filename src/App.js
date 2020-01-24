@@ -14,7 +14,7 @@ const App = () => {
     const response = await data.json();
     setGifUrl(setGifUrl(response.data.fixed_height_downsampled_url));
 
-    /* 
+    /*
     Fetch API using Promises
     
     fetch(
@@ -23,7 +23,8 @@ const App = () => {
       .then(data => data.json())
       .then(response => {
         setGifUrl(response.data.fixed_height_downsampled_url);
-      });
+      })
+      .catch((error) => console.error(error);
     */
   };
 
