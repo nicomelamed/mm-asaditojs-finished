@@ -12,11 +12,11 @@ const App = () => {
       "https://api.giphy.com/v1/gifs/random?api_key=gH7glaXpjdIJUfGdtE2GO5FSQzi09bbY&tag=Cat&rating=G"
     );
     const response = await data.json();
-    setGifUrl(setGifUrl(response.data.fixed_height_downsampled_url));
+    setGifUrl(response.data.fixed_height_downsampled_url));
 
     /*
     Fetch API using Promises
-    
+
     fetch(
       "https://api.giphy.com/v1/gifs/random?api_key=gH7glaXpjdIJUfGdtE2GO5FSQzi09bbY&tag=Cat&rating=G"
     )
